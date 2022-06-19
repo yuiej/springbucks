@@ -6,13 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springbucks (1)" />
         <module name="springbucks" />
+        <module name="springbucks (2)" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="springbucks" options="-parameters" />
+      <module name="springbucks (1)" options="-parameters" />
+      <module name="springbucks (2)" options="-parameters" />
     </option>
   </component>
 </project>

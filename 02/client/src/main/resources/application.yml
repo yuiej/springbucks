@@ -1,0 +1,54 @@
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    schema: classpath:db/schema.sql #，每次启动程序，程序都会运行schema.sql文件，对数据库的数据操作
+    data: classpath:db/data.sql #，每次启动程序，程序都会运行data.sql文件，对数据库的数据操作
+    url: jdbc:h2:mem:test #配置h2数据库的连接地址
+    username: sa
+    password: sa
+
+    druid:
+      initial-size: 5
+      max-active: 5
+      min-idle: 5
+      filters: config,stat,slf4j
+#      connection-properties: config.decrypt=true;config.decrypt.key=${public-key}
+      filter:
+        config:
+          enabled: true
+#  cache:
+#    type: redis
+#    redis:
+#      time-to-live: 10000
+#      cache-null-values: false
+#  redis:
+#    host: localhost
+forest:
+
+
+  h2:
+    console:
+      enabled: true #开启web console功能
+
+      test-on-borrow: true
+      test-on-return: true
+      test-while-idle: true
+
+  output:
+    ansi:
+      enabled: ALWAYS
+
+mybatis:
+  mapper-locations:
+    - classpath*:mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+pagehelper:
+  offset-as-page-num: true
+  reasonable: true
+  page-size-zero: true
+  support-methods-arguments: true
+
